@@ -49,8 +49,8 @@ if (php_sapi_name() !== 'cli')
 
 
 /*
-* inicializar PDO via medoo
-* Veja arquivo: DOC
+* PDO Instantiation via medoo
+* See file >> DOC
 */
 $database = new medoo(array(
     'database_type' => 'mysql',
