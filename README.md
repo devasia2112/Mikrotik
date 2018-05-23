@@ -8,9 +8,9 @@ Este Repositório é parte do sistema Synet para provedores de internet.
 	basicamente o que sera necessario obter da api em caso de erros seriam os
 	campos marcados em * e tratar baseado na tabela `MIKROTIK ERROR CATEGORY`
 
-  *>>> !trap
-	*>>> =category=1
-	*>>> =message=input does not match any value of interface
+  	`*>>> !trap`
+	`*>>> =category=1`
+	`*>>> =message=input does not match any value of interface`
 
 	*****************************************
 	MIKROTIK ERROR CATEGORY 
@@ -56,16 +56,15 @@ Este Repositório é parte do sistema Synet para provedores de internet.
 	feitos apenas com arrays para efeito de demonstração.
 
 
-
 # Development Roadmap (TODO LIST)
-  Gerenciar grupos de usuarios do mikrotik.
-  Gerenciar usuarios do mikrotik.
-  Gerenciar os serviço do sistema (IP>Services)
-  Cadastro de servidor Hotspot.
-  Cadastro de servidor PPPoE.
-  Automação Geral do servidor mikrotik.
-  Visualização geral do servidor.
-  Visualização geral do servidor NAS (repetidoras).
+- [ ] Gerenciar grupos de usuarios do mikrotik.
+- [ ] Gerenciar usuarios do mikrotik.
+- [ ] Gerenciar os serviço do sistema (IP>Services).
+- [ ] Cadastro de servidor Hotspot.
+- [ ] Cadastro de servidor PPPoE.
+- [ ] Automação Geral do servidor mikrotik.
+- [ ] Visualização geral do servidor.
+- [ ] Visualização geral do servidor NAS (repetidoras).
 
 
 # Referencias
