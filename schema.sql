@@ -220,6 +220,12 @@ INSERT INTO `servidor_services` (`id`, `server_id`, `service_status`, `service_n
 
 
 
+--
+-- Change datetime to use current_timestamp in case the system 
+-- not passing the current date as parameter.
+--
+ALTER TABLE `mikrotik_ping` 
+  CHANGE `date_time` `date_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
 
 
 --
