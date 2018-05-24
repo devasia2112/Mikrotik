@@ -29,7 +29,7 @@ require 'config.php';
 /**
 *
 * Importante
-* para poder testar ativar "TEST" nas permições de acesso para o 
+* para poder testar ativar "TEST" nas permissões de acesso para o 
 * usuário da API -->>  `/system/user`
 *
 * Exemplo de GET request via url: 
