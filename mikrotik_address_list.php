@@ -28,9 +28,9 @@ require 'config.php';
 
 /**
 * Exemplo de GET request via url: 
-* `http://localhost/mikrotik_address_list.php?oprt=ping&serveridnew=5&serverid=4&exitnode=&exitnodelog=true&gateway=&ip=&subnet=30&network=&interface=INTERFACETEST01&broadcast=&disabled=false&comment=test`
+* `http://localhost/mikrotik_address_list.php?oprt=set&serveridnew=5&serverid=4&exitnode=&exitnodelog=true&gateway=&ip=&subnet=30&network=&interface=INTERFACETEST01&broadcast=&disabled=false&comment=test`
 */
-$op          = $_GET["oprt"];           // tipo operacao: delete, set, nat_set_rule e nat_delete_rule
+$op          = $_GET["oprt"];           // tipo operacao: {delete, set, nat_set_rule, nat_delete_rule}
 $serveridnew = $_GET["serveridnew"];    // ID do NOVO servidor escolhido no dropbox
 $serverid    = $_GET["serverid"];       // ID do servidor ANTIGO que ja vem carregado no dropbox
 $exitnode    = $_GET["exitnode"];       // IP do exit node
