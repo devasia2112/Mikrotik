@@ -28,9 +28,9 @@ Este Repositório é parte do sistema Synet para provedores de internet.
 
 # Interfaces
 	Todos os scripts contidos nesse pacote devem executar operações no servidor 
-	Mikrotik usando o metodo API. Nesse pacote não esta sendo disponibilizado 
-	interfaces de interação direta com o usuario, no entanto essa interacao pode 
-	ser feita atraves de uma requisição do tipo GET ou POST dependendo do script.
+	Mikrotik usando o metodo API. Nesse pacote vou disponibilizar apenas a interface 
+	para administração de NAS, no entanto essa interacao pode ser feita atraves de uma 
+	requisição do tipo GET ou POST dependendo do script.
 
 
 # Autenticação com o servidor
