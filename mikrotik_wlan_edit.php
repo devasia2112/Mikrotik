@@ -33,7 +33,7 @@ require 'config.php';
 * usuário da API -->>  `/system/user`
 *
 * Exemplo de GET request via url: 
-* `http://localhost/mikrotik_nas_admin.php?server=4&default_name=NOMETHER`
+* `http://localhost/mikrotik_wlan_edit.php?server=4&default_name=NOMETHER`
 *
 */
 
