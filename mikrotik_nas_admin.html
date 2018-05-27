@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="cache-control" content="no-store" /> <!-- no-cache nao funciona em todos os browsers -->
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="assets/jquery-1.10.1.min.js"></script>
+	<!-- Add mousewheel plugin (this is optional) - good to scrool iframes pages -->
+	<script type="text/javascript" src="assets/jquery.mousewheel-3.0.6.pack.js"></script>
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="assets/jquery.fancybox.js?v=2.1.5"></script>
+	<script type="text/javascript">$(document).ready(function(){$('.fancybox').fancybox();});/*Uses default settings*/</script>
+	<link rel="stylesheet" type="text/css" href="assets/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<title>Informações do Dispositivo</title>
+</head>
+
+<!--
+* Mikrotik NAS Admin Interface
+*
+* Interface de exemplo para administrar NAS 
+*
+* PHP versions 5 and 7
+*
+* LICENSE: This source file is subject to version 3 of the GNU license
+* that is available through the world-wide-web at the following URI:
+* https://www.gnu.org/licenses/gpl.txt.  If you did not receive a copy of
+* the GNU License and are unable to obtain it through the web, please
+* send a note to gnu@gnu.org so we they can mail you a copy immediately.
+*
+* @category   Servers
+* @package    Mikrotik
+* @author     costa <deepcell@gmail.com>
+* @copyright  Free to use and change under the terms of the license.
+* @license    https://www.gnu.org/licenses/gpl.txt  GNU License Version 3
+* @version    0.1
+* @link       https://github.com/deepcell/Mikrotik
+* @see        ..
+* @since      File available since Release 0.1
+* @deprecated ..
+-->
+
+<body>
+<div align="center">
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="100%" align="center" colspan="3" bgcolor="#C0C0C0">
+			<font face="Arial" size="5"><strong>#NAME# (#ARCHITECTURE#)</strong></font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="left"><font face="Arial" color="#FFFFFF">
+			<span style="font-size: 5pt">.</span></font></td>
+			<td width="34%" align="center"><font face="Arial" color="#FFFFFF">
+			<span style="font-size: 5pt">.</span></font></td>
+			<td width="33%" align="right">
+			<font face="Arial" color="#FFFFFF"><span style="font-size: 5pt">.</span></font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>
+			Informações do Dispositivo:</b></font></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0">&nbsp;</td>
+			<td width="33%" align="right" bgcolor="#C0C0C0">
+			<p align="right"><font face="Arial" size="2"><b>Uptime: #UPTIME# </b></font></td> <!-- (mo/w/d/hh/mm/ss) -->
+		</tr>
+		<tr>
+			<td width="33%" align="left"><font face="Arial" size="2">OS:  #PLATFORM#</font></td>
+			<td width="34%" align="center"><font face="Arial" size="2">Plataforma: #BOARD_NAME#</font></td>
+			<td width="33%" align="right">
+			<font face="Arial" size="2">Versão: #VERSION# - #ARCHITECTURE_NAME# - Level: #LEVEL#</font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="left">&nbsp;</td>
+			<td width="34%" align="center">&nbsp;</td>
+			<td width="33%" align="right">&nbsp;</td>
+		</tr>
+		</table>
+	<p>&nbsp;</p>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="35%" align="left" valign="top" bgcolor="#C0C0C0"><b><font face="Arial" size="2">Informações da CPU:</font></b></td>
+			<td width="45%" align="center" colspan="2" valign="top" bgcolor="#C0C0C0"><font face="Arial" size="2">#CPU# (#CPU_FREQUENCY# Mhz) #CPU_COUNT# Core(s) Disponível(is)</font></td>
+			<td width="20%" align="right" valign="top" bgcolor="#C0C0C0"><b><font face="Arial" size="2">Uso em #CPU_LOAD#%</font></b></td>
+		</tr>
+		<tr>
+			<td width="50%" align="center" colspan="2">
+			<font color="#FFFFFF" style="font-size: 5pt" face="Arial">.</font></td>
+			<td width="50%" align="center" colspan="2">
+	<font color="#FFFFFF" style="font-size: 5pt" face="Arial">.</font></td>
+		</tr>
+		<tr>
+			<td width="50%" align="center" colspan="2" bgcolor="#C0C0C0">
+			<font face="Arial" size="2">Últimas 24h</font></td>
+			<td width="50%" align="center" colspan="2" bgcolor="#C0C0C0">
+	<font face="Arial" size="2">Últimos 7 dias</font></td>
+		</tr>
+		<tr><td colspan=4>#SERVER_PORT_ERROR#</td></tr>
+		<tr>
+			<td width="50%" align="left" colspan="2">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/cpu/daily.gif" width="370" height="170"></td>
+			<td width="50%" align="left" colspan="2">
+	<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/cpu/weekly.gif" width="370" height="170"></td>
+		</tr>
+		<tr>
+			<td width="35%" align="left">&nbsp;</td>
+			<td width="45%" align="center" colspan="2">&nbsp;</td>
+			<td width="20%" align="right">
+			&nbsp;</td>
+		</tr>
+	</table>
+	<p>&nbsp;</p>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="33%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>Memória RAM:</b></font></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Total: #TOTAL_MEMORY# Kb</font></td>
+			<td align="right" width="33%" bgcolor="#C0C0C0"><font face="Arial" size="2">Livre: #FREE_MEMORY# Kb	(#FREE_MEMORY_PERC#%) </font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="center">
+			<font face="Arial" style="font-size: 5pt" color="#FFFFFF">.</font></td>
+			<td width="34%" align="center">
+			<font face="Arial" style="font-size: 5pt" color="#FFFFFF">.</font></td>
+			<td width="33%" align="center">
+			<font face="Arial" style="font-size: 5pt" color="#FFFFFF">.</font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Últimas 24 horas</font></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Últimos 7 dias</font></td>
+			<td width="33%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Últimos 30 dias</font></td>
+		</tr>
+		<tr><td colspan=6>#SERVER_PORT_ERROR#</td></tr>
+		<tr>
+			<td width="33%" align="left">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/ram/daily.gif" width="250" height="170"></td>
+			<td width="34%" align="center">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/ram/weekly.gif" width="250" height="170"></td>
+			<td width="33%" align="right">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/ram/monthly.gif" width="250" height="170"></td>
+		</tr>
+		<tr>
+			<td width="33%" align="left">&nbsp;</td>
+			<td width="34%" align="center">&nbsp;</td>
+			<td width="33%" align="right">&nbsp;</td>
+		</tr>
+	</table>
+	<p>&nbsp;</p>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>HD/SD:</b></font></td>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2">Total: #TOTAL_HDD_SPACE# kb</font></td>
+			<td width="25%" align="left" bgcolor="#C0C0C0">&nbsp;</td>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2">Livre: #FREE_HDD_SPACE# kb (#FREE_HDD_SPACE_PERC#%)</font></td>
+		</tr>
+		<tr>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>Setores:</b></font></td>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2">Em Branco: #WRITE_SECT_TOTAL#</font></td>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2">Desde Reboot: #WRITE_SECT_SINCE_REBOOT#</font></td>
+			<td width="25%" align="left" bgcolor="#C0C0C0"><font face="Arial" size="2">Bad Blocks: #BAD_BLOCKS#%</font></td>
+		</tr>
+		<tr>
+			<td width="25%" align="left"><font face="Arial" color="#FFFFFF">
+			<span style="font-size: 5pt">.</span></font></td>
+			<td width="25%" align="left"><font face="Arial" color="#FFFFFF">
+			<span style="font-size: 5pt">.</span></font></td>
+			<td width="25%" align="left"><font face="Arial" color="#FFFFFF">
+			<span style="font-size: 5pt">.</span></font></td>
+			<td width="25%" align="left"><font face="Arial" color="#FFFFFF">
+			<span style="font-size: 5pt">.</span></font></td>
+		</tr>
+	</table>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="33%" align="center" bgcolor="#C0C0C0">
+			<font face="Arial" size="2">Últimas 24 horas</font></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0">
+			<font face="Arial" size="2">Últimos 7 dias</font></td>
+			<td width="33%" align="center" bgcolor="#C0C0C0">
+			<font face="Arial" size="2">Últimos 30 dias</font></td>
+		</tr>
+		<tr><td colspan=6>#SERVER_PORT_ERROR#</td></tr>
+		<tr>
+			<td width="33%" align="left">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/hdd/daily.gif" width="250" height="170"></td>
+			<td width="34%" align="center">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/hdd/weekly.gif" width="250" height="170"></td>
+			<td width="33%" align="right">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/hdd/monthly.gif" width="250" height="170"></td>
+		</tr>
+		<tr>
+			<td width="33%" align="left">&nbsp;</td>
+			<td width="34%" align="center">&nbsp;</td>
+			<td width="33%" align="right">&nbsp;</td>
+		</tr>
+	</table>
+	<p>&nbsp;</p>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="33%" align="left" bgcolor="#C0C0C0"><b><font face="Arial" size="2">Consumo 
+			da interface de saída:</font></b></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0">&nbsp;</td>
+			<td align="right" width="33%" bgcolor="#C0C0C0">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="33%" align="center">
+			<font face="Arial" color="#FFFFFF" style="font-size: 5pt">.</font></td>
+			<td width="34%" align="center">
+			<font face="Arial" color="#FFFFFF" style="font-size: 5pt">.</font></td>
+			<td width="33%" align="center">
+			<font face="Arial" color="#FFFFFF" style="font-size: 5pt">.</font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Últimas 
+			24 horas</font></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Últimos 7 dias</font></td>
+			<td width="33%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2">Últimos 30 dias</font></td>
+		</tr>
+		<tr><td colspan=6>#SERVER_PORT_ERROR#</td></tr>
+		<tr>
+			<td width="33%" align="left">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/iface/pppoe%2D15419/daily.gif" width="250" height="170"></td>
+			<td width="34%" align="center">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/iface/pppoe%2D15419/weekly.gif" width="250" height="170"></td>
+			<td width="33%" align="right">
+			<img border="0" src="//#SERVER_IP#:#SERVER_PORT#/graphs/iface/pppoe%2D15419/monthly.gif" width="250" height="170"></td>
+		</tr>
+		<tr>
+			<td width="33%" align="left">&nbsp;</td>
+			<td width="34%" align="center">&nbsp;</td>
+			<td width="33%" align="right">&nbsp;</td>
+		</tr>
+	</table>
+	<p>&nbsp;</p>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="100%" align="center" colspan="3" bgcolor="#C0C0C0"><strong>
+			<font face="Arial" size="5">INTERFACES</font></strong></td>
+		</tr>
+		<tr>
+			<td width="33%" align="center">
+			<font color="#FFFFFF" style="font-size: 5pt" face="Arial">.</font></td>
+			<td width="34%" align="center">
+			<font color="#FFFFFF" style="font-size: 5pt" face="Arial">.</font></td>
+			<td align="center" width="33%">
+			<font color="#FFFFFF" style="font-size: 5pt" face="Arial">.</font></td>
+		</tr>
+		<tr>
+			<td width="33%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>ETHER</b></font></td>
+			<td width="34%" align="center" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>WLAN</b></font></td>
+			<td align="center" width="33%" bgcolor="#C0C0C0"><font face="Arial" size="2"><b>Bridge</b></font></td>
+		</tr>
+		<tr>
+			<td width="33%" valign="top">
+			<div align="center">&nbsp;<table border="0" width="95%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="13" bgcolor="#C0C0C0">&nbsp;</td>
+						<td width="167" bgcolor="#C0C0C0"><b>
+						<font size="2" face="Arial">Nome</font></b></td>
+						<td bgcolor="#C0C0C0">
+						<b><font size="2" face="Arial">Ação</font></b></td>
+					</tr>
+					
+					<!-- mostrar o bloco tr da tabela -->
+					#ETHER_HTML_TR#
+					
+				</table>
+			</div>
+			</td>
+			<td width="34%" valign="top" align="center">
+				<div align="center">&nbsp;<table border="0" width="95%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="13" bgcolor="#C0C0C0">&nbsp;</td>
+							<td width="167" bgcolor="#C0C0C0"><b>
+							<font size="2" face="Arial">Nome</font></b></td>
+							<td bgcolor="#C0C0C0">
+							<b><font size="2" face="Arial">Ação</font></b></td>
+						</tr>
+						
+						<!-- mostra wireless (WLAN) bloco -->
+						#WLAN_HTML_TR#
+
+					</table>
+				</div>
+				<p><b><font face="Arial" size="2">Security Profiles</font></b><table border="0" width="95%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="13" bgcolor="#C0C0C0">&nbsp;</td>
+							<td width="167" bgcolor="#C0C0C0"><b>
+								<font size="2" face="Arial">Nome</font></b>
+							</td>
+							<td bgcolor="#C0C0C0">
+								<b><font size="2" face="Arial">Ação</font></b>
+								<!-- mostra o botao + para adicionar um novo security profile -->
+								#SEC_PROFILE_ADD#
+							</td>
+						</tr>
+						
+						<!-- mostra security profile -->
+						#SEC_PROFILE_HTML_TR#
+						
+					</table>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;
+			</td>
+			<td valign="top" width="33%" align="center">
+				<div align="center">&nbsp;<table border="0" width="95%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="13" bgcolor="#C0C0C0">&nbsp;</td>
+							<td width="167" bgcolor="#C0C0C0"><b>
+							<font size="2" face="Arial">Nome</font></b></td>
+							<td bgcolor="#C0C0C0">
+								<b><font size="2" face="Arial">Ação</font></b>
+								<!-- mostra o botao + para adicionar uma nova bridge -->
+								#BRIDGE_ADD#
+							</td>
+						</tr>
+
+						<!-- mostra bridges -->
+						#BRIDGE_HTML_TR#
+
+					</table>
+				</div>
+
+
+			<p><b><font face="Arial" size="2">Bridge Ports</font></b><table border="0" width="95%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="13" bgcolor="#C0C0C0">&nbsp;</td>
+						<td width="167" bgcolor="#C0C0C0"><b>
+							<font size="2" face="Arial">Nome</font></b>
+						</td>
+						<td bgcolor="#C0C0C0">
+							<b><font size="2" face="Arial">Ação</font></b>
+							<!-- mostra o botao + para adicionar um novo bridge ports -->
+							#BRIDGE_PORTS_ADD#
+						</td>
+					</tr>
+					
+					<!-- mostra bridge ports -->
+					#BRIDGE_PORTS_HTML_TR#
+					
+				</table>
+			<p>&nbsp;</p>
+
+
+			<p>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="33%">&nbsp;</td>
+			<td width="34%">&nbsp;</td>
+			<td width="33%">&nbsp;</td>
+		</tr>
+	</table>
+	<p>&nbsp;</div>
+
+</body>
+</html>
