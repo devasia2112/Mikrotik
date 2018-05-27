@@ -28,6 +28,16 @@
 
 require 'config.php';
 
+/**
+*
+* Importante
+* para poder testar ativar "TEST" nas permissões de acesso para o 
+* usuário da API -->>  `/system/user`
+*
+* Exemplo de GET request via url: 
+* `http://localhost/mikrotik_nas_admin.php?server=4`
+*
+*/
 
 /*******************************************************************************
  * Recebe o ID do servidor via metodo get 
