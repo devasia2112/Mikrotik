@@ -72,7 +72,7 @@ Este Repositório é parte do sistema Synet para provedores de internet.
 - [ ] Automação Geral do servidor mikrotik.
 - [ ] Visualização geral do servidor.
 - [ ] Visualização geral do servidor NAS (repetidoras).
-- [V] Edição de Ether Interfaces.
+- [x] Edição de Ether Interfaces.
 
 
 # Referencias
