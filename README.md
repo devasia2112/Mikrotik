@@ -75,6 +75,7 @@ Este Repositório é parte do sistema Synet para provedores de internet.
 - [x] Edição de Ether Interfaces.
 - [x] Set Mikrotik Security Profiles.
 - [x] Mikrotik Queue List.
+- [ ] Mikrotik Bridge.
 
 
 
