@@ -76,7 +76,7 @@ Este Repositório é parte do sistema Synet para provedores de internet.
 - [x] Set Mikrotik Security Profiles.
 - [x] Mikrotik Queue List.
 - [x] Mikrotik Bridge Set.
-- [ ] Mikrotik Bridge Ports Set.
+- [x] Mikrotik Bridge Ports Set.
 
 
 
